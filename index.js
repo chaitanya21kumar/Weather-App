@@ -181,10 +181,14 @@ async function fetchSearchWeatherInfo(city){
         const data=await response.json();
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
+errorContainer.classList.remove("active");
+
         renderWeatherInfo(data);
     }
     catch(err){
         loadingScreen.classList.remove("active");
+        userInfoContainer.classList.remove("active");
+
         displayError();
     }
 }
